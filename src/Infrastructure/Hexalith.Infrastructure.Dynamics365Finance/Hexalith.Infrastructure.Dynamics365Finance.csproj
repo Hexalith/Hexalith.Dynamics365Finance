@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>$(CommonTargetFrameworks)</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="$(MicrosoftExtensionsPackagesVersion)" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' == 'true' or '$(BuildingByReSharper)' == 'true'">
+		<ProjectReference Include="$(HexalithPath)\src\Core\Application\Hexalith.Application.Organizations\Hexalith.Application.Organizations.csproj" />
+		<ProjectReference Include="$(HexalithPath)\src\Core\Infrastructure\Hexalith.Infrastructure.AzureActiveDirectory\Hexalith.Infrastructure.AzureActiveDirectory.csproj" />
+		<ProjectReference Include="$(HexalithPath)\src\Core\Infrastructure\Hexalith.Infrastructure.Serialization\Hexalith.Infrastructure.Serialization.csproj" />
+		<ProjectReference Include="$(HexalithPath)\src\Core\Infrastructure\Hexalith.Infrastructure.WebApis\Hexalith.Infrastructure.WebApis.csproj" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' != 'true' and '$(BuildingByReSharper)' != 'true'">
+		<PackageReference Include="Hexalith.Application.Organizations" Version="$(HexalithVersion)" />
+		<PackageReference Include="Hexalith.Infrastructure.AzureActiveDirectory" Version="$(HexalithVersion)" />
+		<PackageReference Include="Hexalith.Infrastructure.Serialization" Version="$(HexalithVersion)" />
+		<PackageReference Include="Hexalith.Infrastructure.WebApis" Version="$(HexalithVersion)" />
+	</ItemGroup>
+</Project>

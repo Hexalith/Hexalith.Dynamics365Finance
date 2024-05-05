@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>$(CommonTargetFrameworks)</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' == 'true' or '$(BuildingByReSharper)' == 'true'">
+		<ProjectReference Include="$(HexalithPath)\src\Core\Common\Hexalith.TestMocks\Hexalith.TestMocks.csproj" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' != 'true' and '$(BuildingByReSharper)' != 'true'">
+		<PackageReference Include="Hexalith.TestMocks" Version="$(HexalithVersion)" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\Common\Hexalith.TestMocks\Hexalith.TestMocks.csproj" />
+		<ProjectReference Include="..\Hexalith.Infrastructure.Dynamics365Finance\Hexalith.Infrastructure.Dynamics365Finance.csproj" />
+	</ItemGroup>
+</Project>
