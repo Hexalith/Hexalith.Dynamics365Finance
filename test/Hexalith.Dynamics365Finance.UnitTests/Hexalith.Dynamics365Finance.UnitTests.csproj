@@ -6,6 +6,7 @@
 		<None Include="..\..\.editorconfig" Link=".editorconfig" />
 	</ItemGroup>
 	<ItemGroup>
+	  <ProjectReference Include="..\..\src\Infrastructure\Hexalith.Dynamics365Finance.TestMocks\Hexalith.Dynamics365Finance.TestMocks.csproj" />
 	  <ProjectReference Include="..\..\src\Servers\Hexalith.Server.Dynamics365Finance\Hexalith.Server.Dynamics365Finance.csproj" />
 	</ItemGroup>
 	<ItemGroup>

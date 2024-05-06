@@ -63,8 +63,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Domain.Organizatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Infrastructure.DaprRuntime.Parties.Abstractions", "Hexalith\src\Core\Infrastructure\Hexalith.Infrastructure.DaprRuntime.Parties.Abstractions\Hexalith.Infrastructure.DaprRuntime.Parties.Abstractions.csproj", "{53512DC6-992E-4ABA-9D6D-AAF359BBB319}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Infrastructure.DaprRuntime.Inventories.Abstractions", "Hexalith\src\Core\Infrastructure\Hexalith.Infrastructure.DaprRuntime.Inventories.Abstractions\Hexalith.Infrastructure.DaprRuntime.Inventories.Abstractions.csproj", "{275EC7FD-558A-4920-95E8-EF04AE313C5F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Infrastructure.DaprRuntime.ExternalSystems.Aggregates", "Hexalith\src\Core\Infrastructure\Hexalith.Infrastructure.DaprRuntime.ExternalSystems.Aggregates\Hexalith.Infrastructure.DaprRuntime.ExternalSystems.Aggregates.csproj", "{831B3337-84AD-4AB0-9312-38444AAF17B0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Infrastructure.DaprRuntime.ExternalSystems.Projections", "Hexalith\src\Core\Infrastructure\Hexalith.Infrastructure.DaprRuntime.ExternalSystems.Projections\Hexalith.Infrastructure.DaprRuntime.ExternalSystems.Projections.csproj", "{FACEC4B4-B685-4853-98CA-F38587A025C0}"
@@ -335,10 +333,6 @@ Global
 		{53512DC6-992E-4ABA-9D6D-AAF359BBB319}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53512DC6-992E-4ABA-9D6D-AAF359BBB319}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53512DC6-992E-4ABA-9D6D-AAF359BBB319}.Release|Any CPU.Build.0 = Release|Any CPU
-		{275EC7FD-558A-4920-95E8-EF04AE313C5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{275EC7FD-558A-4920-95E8-EF04AE313C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{275EC7FD-558A-4920-95E8-EF04AE313C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{275EC7FD-558A-4920-95E8-EF04AE313C5F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{831B3337-84AD-4AB0-9312-38444AAF17B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{831B3337-84AD-4AB0-9312-38444AAF17B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{831B3337-84AD-4AB0-9312-38444AAF17B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -597,7 +591,6 @@ Global
 		{4BFB8526-A11F-4946-9905-7F00EECEF7FF} = {AA983AFF-9CBC-4F2A-98E3-3CACA5039C61}
 		{71564D94-DA05-4FCA-985F-E5574EFF2723} = {5A9735A3-CEE9-4E50-B2FD-54F0BF402002}
 		{53512DC6-992E-4ABA-9D6D-AAF359BBB319} = {FA933B2A-DC9F-44A0-94C7-C5D2D49C550B}
-		{275EC7FD-558A-4920-95E8-EF04AE313C5F} = {FA933B2A-DC9F-44A0-94C7-C5D2D49C550B}
 		{831B3337-84AD-4AB0-9312-38444AAF17B0} = {FA933B2A-DC9F-44A0-94C7-C5D2D49C550B}
 		{FACEC4B4-B685-4853-98CA-F38587A025C0} = {FA933B2A-DC9F-44A0-94C7-C5D2D49C550B}
 		{EB1E9B5C-4A1E-48F7-BE49-0C1D8E2CE84C} = {FA933B2A-DC9F-44A0-94C7-C5D2D49C550B}
