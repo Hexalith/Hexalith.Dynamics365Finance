@@ -18,7 +18,7 @@ namespace Hexalith.Server.Dynamics365Finance.Infrastructure.Controllers;
 
 using Hexalith.Application.Events;
 using Hexalith.Application.Projections;
-using Hexalith.Infrastructure.WebApis.InventoriesEvents.Controllers;
+using Hexalith.Inventories.EventsWebApis.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
 

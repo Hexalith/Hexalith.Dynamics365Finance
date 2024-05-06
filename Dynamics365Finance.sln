@@ -150,6 +150,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_build", "_build", "{3A505F
 		src\BuildFiles\.stylecop.json = src\BuildFiles\.stylecop.json
 		src\BuildFiles\.stylecop.ruleset = src\BuildFiles\.stylecop.ruleset
 		Directory.Build.props = Directory.Build.props
+		Hexalith.props = Hexalith.props
 		src\BuildFiles\Project.Common.props = src\BuildFiles\Project.Common.props
 	EndProjectSection
 EndProject
@@ -171,21 +172,66 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.UI.Modules.Abstrac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.UI.Modules", "Hexalith\src\Core\UI\Hexalith.UI.Modules\Hexalith.UI.Modules.csproj", "{92269465-385D-4598-9883-28379DE598C6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Infrastructure.Dynamics365Finance", "src\Infrastructure\Hexalith.Infrastructure.Dynamics365Finance\Hexalith.Infrastructure.Dynamics365Finance.csproj", "{D6747A9A-5A11-4726-9862-188459C343F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Dynamics365Finance", "src\Infrastructure\Hexalith.Dynamics365Finance\Hexalith.Dynamics365Finance.csproj", "{D6747A9A-5A11-4726-9862-188459C343F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Infrastructure.Dynamics365Finance.Inventories", "src\Infrastructure\Hexalith.Infrastructure.Dynamics365Finance.Inventories\Hexalith.Infrastructure.Dynamics365Finance.Inventories.csproj", "{57064CE4-8034-413E-AB31-87DF78CD9CBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Dynamics365Finance.Inventories", "src\Infrastructure\Hexalith.Dynamics365Finance.Inventories\Hexalith.Dynamics365Finance.Inventories.csproj", "{57064CE4-8034-413E-AB31-87DF78CD9CBE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Infrastructure.Dynamics365Finance.Parties", "src\Infrastructure\Hexalith.Infrastructure.Dynamics365Finance.Parties\Hexalith.Infrastructure.Dynamics365Finance.Parties.csproj", "{BE6E4C4D-873A-4DD4-8B4B-A246F4EF8277}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Dynamics365Finance.Parties", "src\Infrastructure\Hexalith.Dynamics365Finance.Parties\Hexalith.Dynamics365Finance.Parties.csproj", "{BE6E4C4D-873A-4DD4-8B4B-A246F4EF8277}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Infrastructure.Dynamics365Finance.Retail", "src\Infrastructure\Hexalith.Infrastructure.Dynamics365Finance.Retail\Hexalith.Infrastructure.Dynamics365Finance.Retail.csproj", "{15E5AAD5-DAC4-4CCC-8BF4-4EB70D6ABF51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Dynamics365Finance.Retail", "src\Infrastructure\Hexalith.Dynamics365Finance.Retail\Hexalith.Dynamics365Finance.Retail.csproj", "{15E5AAD5-DAC4-4CCC-8BF4-4EB70D6ABF51}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Infrastructure.Dynamics365Finance.Sales", "src\Infrastructure\Hexalith.Infrastructure.Dynamics365Finance.Sales\Hexalith.Infrastructure.Dynamics365Finance.Sales.csproj", "{43201834-D3F6-460C-A46B-50D1E1ECAA7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Dynamics365Finance.Sales", "src\Infrastructure\Hexalith.Dynamics365Finance.Sales\Hexalith.Dynamics365Finance.Sales.csproj", "{43201834-D3F6-460C-A46B-50D1E1ECAA7E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Infrastructure.Dynamics365Finance.TestMocks", "src\Infrastructure\Hexalith.Infrastructure.Dynamics365Finance.TestMocks\Hexalith.Infrastructure.Dynamics365Finance.TestMocks.csproj", "{0513C042-CDA3-4196-A2ED-894D79E1B154}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Dynamics365Finance.TestMocks", "src\Infrastructure\Hexalith.Dynamics365Finance.TestMocks\Hexalith.Dynamics365Finance.TestMocks.csproj", "{0513C042-CDA3-4196-A2ED-894D79E1B154}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Dynamics365Finance.UnitTests", "test\Hexalith.Dynamics365Finance.UnitTests\Hexalith.Dynamics365Finance.UnitTests.csproj", "{C825E352-7E31-4A23-8814-CBADAC4363DB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Server.Dynamics365Finance", "src\Servers\Hexalith.Server.Dynamics365Finance\Hexalith.Server.Dynamics365Finance.csproj", "{AAE78C96-4FE5-4A04-B78C-DEF1A8A34BD3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hexalith.Inventories", "Hexalith.Inventories", "{8D412594-322C-46FC-BADC-F4AE6DFFB6A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{D730786F-9BA0-41AD-9C68-9F46AA327795}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Inventories.Application", "Hexalith.Inventories\src\Application\Hexalith.Inventories.Application\Hexalith.Inventories.Application.csproj", "{9938A3CA-4CFC-434F-AA55-75956016498A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Inventories.Commands", "Hexalith.Inventories\src\Application\Hexalith.Inventories.Commands\Hexalith.Inventories.Commands.csproj", "{998631DC-0993-4493-A2E8-1675C834FEB8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{291E2688-A9F0-46B1-88D1-885D836FE660}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Inventories.Domain.Abstractions", "Hexalith.Inventories\src\Domain\Hexalith.Inventories.Domain.Abstractions\Hexalith.Inventories.Domain.Abstractions.csproj", "{9C67CB5B-342A-4687-A453-1A145228DBD4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Inventories.Events", "Hexalith.Inventories\src\Domain\Hexalith.Inventories.Events\Hexalith.Inventories.Events.csproj", "{A432AAA5-60AE-45BD-827E-36B8D0B8C62F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Inventories.Domain", "Hexalith.Inventories\src\Domain\Hexalith.Inventories.Domain\Hexalith.Inventories.Domain.csproj", "{881A99D5-224B-40F9-88B7-17F757AECA24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_build", "_build", "{38736D76-91BB-4A00-AA11-420C74928B26}"
+	ProjectSection(SolutionItems) = preProject
+		Hexalith.Inventories\.editorconfig = Hexalith.Inventories\.editorconfig
+		Hexalith.Inventories\src\BuildFiles\.stylecop.json = Hexalith.Inventories\src\BuildFiles\.stylecop.json
+		Hexalith.Inventories\src\BuildFiles\.stylecop.ruleset = Hexalith.Inventories\src\BuildFiles\.stylecop.ruleset
+		Hexalith.Inventories\Directory.Build.props = Hexalith.Inventories\Directory.Build.props
+		Hexalith.Inventories\src\BuildFiles\Project.Common.props = Hexalith.Inventories\src\BuildFiles\Project.Common.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{20FEAF0E-3679-4FFC-A959-40FD254CBB38}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Inventories.CommandsWebApis", "Hexalith.Inventories\src\Infrastructure\Hexalith.Inventories.CommandsWebApis\Hexalith.Inventories.CommandsWebApis.csproj", "{0B1E72A6-3324-461E-AD08-9BFBB2B5CDE2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Inventories.DaprRuntime", "Hexalith.Inventories\src\Infrastructure\Hexalith.Inventories.DaprRuntime\Hexalith.Inventories.DaprRuntime.csproj", "{8FB0445A-16B7-4752-A4C5-DC6DE05ACB05}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Inventories.DaprRuntime.Abstractions", "Hexalith.Inventories\src\Infrastructure\Hexalith.Inventories.DaprRuntime.Abstractions\Hexalith.Inventories.DaprRuntime.Abstractions.csproj", "{A3763996-BC98-4862-88B6-D4D986E7E335}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Inventories.EventsWebApis", "Hexalith.Inventories\src\Infrastructure\Hexalith.Inventories.EventsWebApis\Hexalith.Inventories.EventsWebApis.csproj", "{80A93D9C-6F13-4524-93A3-72A45A6BD416}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_build", "_build", "{9D57ECB6-B7DC-4DDB-A9B6-12EE7A75A879}"
+	ProjectSection(SolutionItems) = preProject
+		Hexalith\.editorconfig = Hexalith\.editorconfig
+		Hexalith\.stylecop.json = Hexalith\.stylecop.json
+		Hexalith\.stylecop.ruleset = Hexalith\.stylecop.ruleset
+		Hexalith\src\Hexalith.Build\Dependencies.props = Hexalith\src\Hexalith.Build\Dependencies.props
+		Hexalith\Directory.Build.props = Hexalith\Directory.Build.props
+		Hexalith\src\Hexalith.Build\Project.Common.props = Hexalith\src\Hexalith.Build\Project.Common.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -481,6 +527,42 @@ Global
 		{AAE78C96-4FE5-4A04-B78C-DEF1A8A34BD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAE78C96-4FE5-4A04-B78C-DEF1A8A34BD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAE78C96-4FE5-4A04-B78C-DEF1A8A34BD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9938A3CA-4CFC-434F-AA55-75956016498A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9938A3CA-4CFC-434F-AA55-75956016498A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9938A3CA-4CFC-434F-AA55-75956016498A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9938A3CA-4CFC-434F-AA55-75956016498A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{998631DC-0993-4493-A2E8-1675C834FEB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{998631DC-0993-4493-A2E8-1675C834FEB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{998631DC-0993-4493-A2E8-1675C834FEB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{998631DC-0993-4493-A2E8-1675C834FEB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C67CB5B-342A-4687-A453-1A145228DBD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C67CB5B-342A-4687-A453-1A145228DBD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C67CB5B-342A-4687-A453-1A145228DBD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C67CB5B-342A-4687-A453-1A145228DBD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A432AAA5-60AE-45BD-827E-36B8D0B8C62F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A432AAA5-60AE-45BD-827E-36B8D0B8C62F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A432AAA5-60AE-45BD-827E-36B8D0B8C62F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A432AAA5-60AE-45BD-827E-36B8D0B8C62F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{881A99D5-224B-40F9-88B7-17F757AECA24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{881A99D5-224B-40F9-88B7-17F757AECA24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{881A99D5-224B-40F9-88B7-17F757AECA24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{881A99D5-224B-40F9-88B7-17F757AECA24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B1E72A6-3324-461E-AD08-9BFBB2B5CDE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B1E72A6-3324-461E-AD08-9BFBB2B5CDE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B1E72A6-3324-461E-AD08-9BFBB2B5CDE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B1E72A6-3324-461E-AD08-9BFBB2B5CDE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FB0445A-16B7-4752-A4C5-DC6DE05ACB05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FB0445A-16B7-4752-A4C5-DC6DE05ACB05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FB0445A-16B7-4752-A4C5-DC6DE05ACB05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FB0445A-16B7-4752-A4C5-DC6DE05ACB05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3763996-BC98-4862-88B6-D4D986E7E335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3763996-BC98-4862-88B6-D4D986E7E335}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3763996-BC98-4862-88B6-D4D986E7E335}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3763996-BC98-4862-88B6-D4D986E7E335}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80A93D9C-6F13-4524-93A3-72A45A6BD416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80A93D9C-6F13-4524-93A3-72A45A6BD416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80A93D9C-6F13-4524-93A3-72A45A6BD416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80A93D9C-6F13-4524-93A3-72A45A6BD416}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -567,6 +649,20 @@ Global
 		{0513C042-CDA3-4196-A2ED-894D79E1B154} = {971DE0DA-285B-4912-BA93-E74411400F87}
 		{C825E352-7E31-4A23-8814-CBADAC4363DB} = {8B5B1376-6E74-4BE2-8688-5F4B604B0370}
 		{AAE78C96-4FE5-4A04-B78C-DEF1A8A34BD3} = {E0E8D9A4-0B77-4F2D-BD6E-7931FEE42ACB}
+		{D730786F-9BA0-41AD-9C68-9F46AA327795} = {8D412594-322C-46FC-BADC-F4AE6DFFB6A8}
+		{9938A3CA-4CFC-434F-AA55-75956016498A} = {D730786F-9BA0-41AD-9C68-9F46AA327795}
+		{998631DC-0993-4493-A2E8-1675C834FEB8} = {D730786F-9BA0-41AD-9C68-9F46AA327795}
+		{291E2688-A9F0-46B1-88D1-885D836FE660} = {8D412594-322C-46FC-BADC-F4AE6DFFB6A8}
+		{9C67CB5B-342A-4687-A453-1A145228DBD4} = {291E2688-A9F0-46B1-88D1-885D836FE660}
+		{A432AAA5-60AE-45BD-827E-36B8D0B8C62F} = {291E2688-A9F0-46B1-88D1-885D836FE660}
+		{881A99D5-224B-40F9-88B7-17F757AECA24} = {291E2688-A9F0-46B1-88D1-885D836FE660}
+		{38736D76-91BB-4A00-AA11-420C74928B26} = {8D412594-322C-46FC-BADC-F4AE6DFFB6A8}
+		{20FEAF0E-3679-4FFC-A959-40FD254CBB38} = {8D412594-322C-46FC-BADC-F4AE6DFFB6A8}
+		{0B1E72A6-3324-461E-AD08-9BFBB2B5CDE2} = {20FEAF0E-3679-4FFC-A959-40FD254CBB38}
+		{8FB0445A-16B7-4752-A4C5-DC6DE05ACB05} = {20FEAF0E-3679-4FFC-A959-40FD254CBB38}
+		{A3763996-BC98-4862-88B6-D4D986E7E335} = {20FEAF0E-3679-4FFC-A959-40FD254CBB38}
+		{80A93D9C-6F13-4524-93A3-72A45A6BD416} = {20FEAF0E-3679-4FFC-A959-40FD254CBB38}
+		{9D57ECB6-B7DC-4DDB-A9B6-12EE7A75A879} = {45BF37A5-A98F-40C9-A990-79F051A3057B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09CBB595-8996-4C7F-9C48-4C58AD9293AC}

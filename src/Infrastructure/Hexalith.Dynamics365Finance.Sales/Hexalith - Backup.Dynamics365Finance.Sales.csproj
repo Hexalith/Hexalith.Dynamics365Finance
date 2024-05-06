@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>$(CommonTargetFrameworks)</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="$(SwashbuckleAspNetCoreVersion)" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' == 'true' or '$(BuildingByReSharper)' == 'true'">
+		<ProjectReference Include="$(HexalithPath)\src\Core\Application\Hexalith.Application.Sales\Hexalith.Application.Sales.csproj" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' != 'true' and '$(BuildingByReSharper)' != 'true'">
+		<PackageReference Include="Hexalith.Application.Sales" Version="$(HexalithVersion)" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Hexalith.Dynamics365Finance.Retail\Hexalith.Dynamics365Finance.Retail.csproj" />
+	</ItemGroup>
+
+</Project>

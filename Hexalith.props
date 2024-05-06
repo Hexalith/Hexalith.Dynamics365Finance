@@ -1,0 +1,12 @@
+<Project>
+	<PropertyGroup>
+		<HexalithParentProps>$([MSBuild]::GetPathOfFileAbove('Hexalith.props', '$(MSBuildThisFileDirectory)..'))</HexalithParentProps>
+	</PropertyGroup>
+	<Import Project="$(HexalithParentProps)" Condition=" '$(HexalithParentProps)' != '' " />
+	<PropertyGroup>
+		<HexalithPath Condition="'$(HexalithPath)' == ''">$(MSBuildThisFileDirectory)Hexalith</HexalithPath>
+		<HexalithVersion Condition="'$(HexalithVersion)' == ''">*</HexalithVersion>
+		<HexalithInventoriesPath Condition="'$(HexalithInventoriesPath)' == ''">$(MSBuildThisFileDirectory)Hexalith.Inventories</HexalithInventoriesPath>
+		<HexalithInventoriesVersion Condition="'$(HexalithInventoriesVersion)' == ''">*</HexalithInventoriesVersion>
+	</PropertyGroup>
+</Project>

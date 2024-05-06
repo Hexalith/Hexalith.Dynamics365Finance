@@ -58,6 +58,7 @@
 		<MoqVersion>4.20.70</MoqVersion>
 		<MoqContribHttpClientVersion>1.4.0</MoqContribHttpClientVersion>
 		<StyleCopAnalyzersVersion>1.2.0-beta.556</StyleCopAnalyzersVersion>
+		<SwashbuckleAspNetCoreVersion>6.5.*</SwashbuckleAspNetCoreVersion>
 		<XUnitRunnerVisualStudioVersion>2.8.0</XUnitRunnerVisualStudioVersion>
 		<XUnitVersion>2.8.0</XUnitVersion>
 	</PropertyGroup>

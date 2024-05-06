@@ -9,12 +9,12 @@ namespace Hexalith.Server.Dynamics365Finance.Infrastructure.Controllers;
 using FluentValidation;
 
 using Hexalith.Application.Organizations.Configurations;
-using Hexalith.Infrastructure.Dynamics365Finance.BusinessEvents;
-using Hexalith.Infrastructure.Dynamics365Finance.Controllers;
-using Hexalith.Infrastructure.Dynamics365Finance.Dispatchers;
-using Hexalith.Infrastructure.Dynamics365Finance.Parties.Configuration;
-using Hexalith.Infrastructure.Dynamics365Finance.Parties.Customers.BusinessEvents;
-using Hexalith.Infrastructure.Dynamics365Finance.Parties.Customers.Controller;
+using Hexalith.Dynamics365Finance.BusinessEvents;
+using Hexalith.Dynamics365Finance.Controllers;
+using Hexalith.Dynamics365Finance.Dispatchers;
+using Hexalith.Dynamics365Finance.Parties.Configuration;
+using Hexalith.Dynamics365Finance.Parties.Customers.BusinessEvents;
+using Hexalith.Dynamics365Finance.Parties.Customers.Controller;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;

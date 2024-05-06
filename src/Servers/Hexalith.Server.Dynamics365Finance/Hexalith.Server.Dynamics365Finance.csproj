@@ -20,11 +20,11 @@
 	</ItemGroup>
 	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' == 'true' or '$(BuildingByReSharper)' == 'true'">
 		<ProjectReference Include="$(HexalithPath)\src\Core\Infrastructure\Hexalith.Infrastructure.DaprRuntime.Parties.Abstractions\Hexalith.Infrastructure.DaprRuntime.Parties.Abstractions.csproj" />
-		<ProjectReference Include="$(HexalithPath)\src\Core\Infrastructure\Hexalith.Infrastructure.DaprRuntime.Inventories.Abstractions\Hexalith.Infrastructure.DaprRuntime.Inventories.Abstractions.csproj" />
 		<ProjectReference Include="$(HexalithPath)\src\Core\Infrastructure\Hexalith.Infrastructure.WebApis.ExternalSystemsEvents\Hexalith.Infrastructure.WebApis.ExternalSystemsEvents.csproj" />
 		<ProjectReference Include="$(HexalithPath)\src\Core\Infrastructure\Hexalith.Infrastructure.WebApis.PartiesEvents\Hexalith.Infrastructure.WebApis.PartiesEvents.csproj" />
 		<ProjectReference Include="$(HexalithPath)\src\Core\Infrastructure\Hexalith.Infrastructure.WebApis.SalesEvents\Hexalith.Infrastructure.WebApis.SalesEvents.csproj" />
-		<ProjectReference Include="$(HexalithPath)\src\Core\Infrastructure\Hexalith.Infrastructure.WebApis.InventoriesEvents\Hexalith.Infrastructure.WebApis.InventoriesEvents.csproj" />
+		<ProjectReference Include="$(HexalithInventoriesPath)\src\Infrastructure\Hexalith.Inventories.DaprRuntime.Abstractions\Hexalith.Inventories.DaprRuntime.Abstractions.csproj" />
+		<ProjectReference Include="$(HexalithInventoriesPath)\src\Infrastructure\Hexalith.Inventories.EventsWebApis\Hexalith.Inventories.EventsWebApis.csproj" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' != 'true' and '$(BuildingByReSharper)' != 'true'">
 		<PackageReference Include="Hexalith.Infrastructure.DaprRuntime.Parties.Abstractions" Version="$(HexalithVersion)" />
@@ -35,10 +35,10 @@
 		<PackageReference Include="Hexalith.Infrastructure.WebApis.InventoriesEvents" Version="$(HexalithVersion)" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Infrastructure\Hexalith.Infrastructure.Dynamics365Finance.Inventories\Hexalith.Infrastructure.Dynamics365Finance.Inventories.csproj" />
-	  <ProjectReference Include="..\..\Infrastructure\Hexalith.Infrastructure.Dynamics365Finance.Parties\Hexalith.Infrastructure.Dynamics365Finance.Parties.csproj" />
-	  <ProjectReference Include="..\..\Infrastructure\Hexalith.Infrastructure.Dynamics365Finance.Retail\Hexalith.Infrastructure.Dynamics365Finance.Retail.csproj" />
-	  <ProjectReference Include="..\..\Infrastructure\Hexalith.Infrastructure.Dynamics365Finance.Sales\Hexalith.Infrastructure.Dynamics365Finance.Sales.csproj" />
+	  <ProjectReference Include="..\..\Infrastructure\Hexalith.Dynamics365Finance.Inventories\Hexalith.Dynamics365Finance.Inventories.csproj" />
+	  <ProjectReference Include="..\..\Infrastructure\Hexalith.Dynamics365Finance.Parties\Hexalith.Dynamics365Finance.Parties.csproj" />
+	  <ProjectReference Include="..\..\Infrastructure\Hexalith.Dynamics365Finance.Retail\Hexalith.Dynamics365Finance.Retail.csproj" />
+	  <ProjectReference Include="..\..\Infrastructure\Hexalith.Dynamics365Finance.Sales\Hexalith.Dynamics365Finance.Sales.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Update="README.md">
