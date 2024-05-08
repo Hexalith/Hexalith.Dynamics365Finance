@@ -8,12 +8,12 @@ namespace Hexalith.Dynamics365Finance.Inventories.PartnerInventoryItems.Helpers;
 
 using FluentValidation;
 
-using Hexalith.Extensions.Configuration;
 using Hexalith.Dynamics365Finance.Helpers;
 using Hexalith.Dynamics365Finance.Inventories.Configuration;
 using Hexalith.Dynamics365Finance.Inventories.PartnerInventoryItems.BusinessEvents;
 using Hexalith.Dynamics365Finance.Inventories.PartnerInventoryItems.Controllers;
 using Hexalith.Dynamics365Finance.Inventories.PartnerInventoryItems.Validators;
+using Hexalith.Extensions.Configuration;
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
