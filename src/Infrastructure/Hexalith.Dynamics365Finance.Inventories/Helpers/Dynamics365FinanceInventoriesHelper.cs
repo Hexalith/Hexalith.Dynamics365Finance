@@ -17,12 +17,13 @@ namespace Hexalith.Dynamics365Finance.Inventories.Helpers;
 
 using System.Diagnostics.CodeAnalysis;
 
+
 using Dapr.Actors.Runtime;
 
-using Hexalith.Extensions.Configuration;
 using Hexalith.Dynamics365Finance.Helpers;
 using Hexalith.Dynamics365Finance.Inventories.Configuration;
 using Hexalith.Dynamics365Finance.Inventories.Inventory;
+using Hexalith.Extensions.Configuration;
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
