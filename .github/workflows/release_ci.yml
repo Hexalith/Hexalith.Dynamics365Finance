@@ -35,10 +35,15 @@ jobs:
         echo "VERSION=$version"
     - name: Build
       run: |
-        dotnet build --configuration Release -p:Version=${{ env.VERSION }}
+        dotnet build './src/Infrastructure/Hexalith.Dynamics365Finance/Hexalith.Dynamics365Finance.csproj' --configuration Release -p:Version=${{ env.VERSION }}
+        dotnet build './src/Infrastructure/Hexalith.Dynamics365Finance.Inventories/Hexalith.Dynamics365Finance.Inventories.csproj' --configuration Release -p:Version=${{ env.VERSION }}
+        dotnet build './src/Infrastructure/Hexalith.Dynamics365Finance.Parties/Hexalith.Dynamics365Finance.Parties.csproj' --configuration Release -p:Version=${{ env.VERSION }}
+        dotnet build './src/Infrastructure/Hexalith.Dynamics365Finance.Retail/Hexalith.Dynamics365Finance.Retail.csproj' --configuration Release -p:Version=${{ env.VERSION }}
+        dotnet build './src/Infrastructure/Hexalith.Dynamics365Finance.Sales/Hexalith.Dynamics365Finance.Sales.csproj' --configuration Release -p:Version=${{ env.VERSION }}
+        dotnet build './src/Infrastructure/Hexalith.Dynamics365Finance.TestMocks/Hexalith.Dynamics365Finance.TestMocks.csproj' --configuration Release -p:Version=${{ env.VERSION }}
     - name: Unit Tests
       run: |
-        dotnet test -c Release --no-restore --no-build ./test/Hexalith.UnitTests/Hexalith.UnitTests.csproj 
+        dotnet test -c Release --no-restore --no-build ./test/Hexalith.Dynamics365Finance.UnitTests/Hexalith.Dynamics365Finance.UnitTests.csproj 
     - name: Deploy release nuget packages
       run: |
         dotnet nuget push './src/Core/**/*.nupkg' --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json --skip-duplicate
