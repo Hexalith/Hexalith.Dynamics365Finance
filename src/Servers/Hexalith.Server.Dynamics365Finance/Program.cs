@@ -8,6 +8,8 @@ using Hexalith.Application.Events;
 using Hexalith.Application.Organizations.Helpers;
 using Hexalith.Domain.Aggregates;
 using Hexalith.Domain.Events;
+using Hexalith.Domain.InventoryItems.Aggregates;
+using Hexalith.Domain.PartnerInventoryItems.Aggregates;
 using Hexalith.Dynamics365Finance.Inventories.PartnerInventoryItems.Helpers;
 using Hexalith.Dynamics365Finance.Parties.Customers.IntegrationEvents;
 using Hexalith.Dynamics365Finance.Parties.Helpers;
@@ -17,8 +19,6 @@ using Hexalith.Infrastructure.DaprRuntime.Parties.Helpers;
 using Hexalith.Infrastructure.WebApis.ExternalSystemsEvents.Helpers;
 using Hexalith.Infrastructure.WebApis.Helpers;
 using Hexalith.Infrastructure.WebApis.PartiesEvents.Helpers;
-using Hexalith.Inventories.Domain.InventoryItems;
-using Hexalith.Inventories.Domain.PartnerInventoryItems;
 using Hexalith.Inventories.EventsWebApis.Helpers;
 using Hexalith.Server.Dynamics365Finance;
 

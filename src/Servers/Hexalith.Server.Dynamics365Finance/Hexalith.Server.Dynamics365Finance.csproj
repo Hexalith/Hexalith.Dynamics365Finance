@@ -32,18 +32,12 @@
 		<PackageReference Include="Hexalith.Infrastructure.WebApis.ExternalSystemsEvents" Version="$(HexalithVersion)" />
 		<PackageReference Include="Hexalith.Infrastructure.WebApis.PartiesEvents" Version="$(HexalithVersion)" />
 		<PackageReference Include="Hexalith.Infrastructure.WebApis.SalesEvents" Version="$(HexalithVersion)" />
-		<PackageReference Include="Hexalith.Infrastructure.WebApis.InventoriesEvents" Version="$(HexalithVersion)" />
+		<PackageReference Include="Hexalith.Inventories.EventsWebApis" Version="$(HexalithVersion)" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\..\Infrastructure\Hexalith.Dynamics365Finance.Inventories\Hexalith.Dynamics365Finance.Inventories.csproj" />
 	  <ProjectReference Include="..\..\Infrastructure\Hexalith.Dynamics365Finance.Parties\Hexalith.Dynamics365Finance.Parties.csproj" />
 	  <ProjectReference Include="..\..\Infrastructure\Hexalith.Dynamics365Finance.Retail\Hexalith.Dynamics365Finance.Retail.csproj" />
 	  <ProjectReference Include="..\..\Infrastructure\Hexalith.Dynamics365Finance.Sales\Hexalith.Dynamics365Finance.Sales.csproj" />
-	</ItemGroup>
-	<ItemGroup>
-	  <None Update="README.md">
-	    <PackagePath>\</PackagePath>
-	    <Pack>true</Pack>
-	  </None>
 	</ItemGroup>
 </Project>
