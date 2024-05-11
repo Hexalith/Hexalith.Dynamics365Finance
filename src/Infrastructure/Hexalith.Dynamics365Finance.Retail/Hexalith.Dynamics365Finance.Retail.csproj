@@ -5,11 +5,6 @@
 	<ItemGroup>
 		<PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="$(SwashbuckleAspNetCoreVersion)" />
 	</ItemGroup>
-
-	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' == 'true' or '$(BuildingByReSharper)' == 'true'">
-		<ProjectReference Include="$(HexalithPath)\src\Core\Application\Hexalith.Application.Parties\Hexalith.Application.Parties.csproj" />
-		<ProjectReference Include="$(HexalithPath)\src\Core\Application\Hexalith.Application.ExternalSystems\Hexalith.Application.ExternalSystems.csproj" />
-	</ItemGroup>
 	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' != 'true' and '$(BuildingByReSharper)' != 'true'">
 		<PackageReference Include="Hexalith.Application.Parties" Version="$(HexalithVersion)" />
 		<PackageReference Include="Hexalith.Application.ExternalSystems" Version="$(HexalithVersion)" />

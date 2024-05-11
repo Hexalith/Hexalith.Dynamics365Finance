@@ -19,10 +19,6 @@
 		<ContainerEnvironmentVariable Include="Dynamics365FinanceClient-standard__CircuitBreaker__SamplingDuration" Value="00:03:00" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' == 'true' or '$(BuildingByReSharper)' == 'true'">
-		<ProjectReference Include="$(HexalithPath)\src\Core\Infrastructure\Hexalith.Infrastructure.DaprRuntime.Parties.Abstractions\Hexalith.Infrastructure.DaprRuntime.Parties.Abstractions.csproj" />
-		<ProjectReference Include="$(HexalithPath)\src\Core\Infrastructure\Hexalith.Infrastructure.WebApis.ExternalSystemsEvents\Hexalith.Infrastructure.WebApis.ExternalSystemsEvents.csproj" />
-		<ProjectReference Include="$(HexalithPath)\src\Core\Infrastructure\Hexalith.Infrastructure.WebApis.PartiesEvents\Hexalith.Infrastructure.WebApis.PartiesEvents.csproj" />
-		<ProjectReference Include="$(HexalithPath)\src\Core\Infrastructure\Hexalith.Infrastructure.WebApis.SalesEvents\Hexalith.Infrastructure.WebApis.SalesEvents.csproj" />
 		<ProjectReference Include="$(HexalithInventoriesPath)\src\Infrastructure\Hexalith.Inventories.DaprRuntime.Abstractions\Hexalith.Inventories.DaprRuntime.Abstractions.csproj" />
 		<ProjectReference Include="$(HexalithInventoriesPath)\src\Infrastructure\Hexalith.Inventories.EventsWebApis\Hexalith.Inventories.EventsWebApis.csproj" />
 	</ItemGroup>
