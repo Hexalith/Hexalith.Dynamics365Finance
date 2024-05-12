@@ -5,9 +5,15 @@
 	<Import Project="$(HexalithProps)" Condition=" '$(HexalithProps)' != '' " />
 	<Import Project="src\BuildFiles\Project.Common.props" />
 	<PropertyGroup>
-		<HexalithPath Condition="'$(HexalithPath)' == ''">$(MSBuildThisFileDirectory)Hexalith</HexalithPath>
+		<HexalithPath Condition="'$(HexalithPath)' == ''">$(MSBuildThisFileDirectory)Hexalith\</HexalithPath>
 		<HexalithVersion Condition="'$(HexalithVersion)' == ''">*</HexalithVersion>
-		<HexalithInventoriesPath Condition="'$(HexalithInventoriesPath)' == ''">$(MSBuildThisFileDirectory)Hexalith.Inventories</HexalithInventoriesPath>
+		<HexalithInventoriesPath Condition="'$(HexalithInventoriesPath)' == ''">$(MSBuildThisFileDirectory)Hexalith.Inventories\</HexalithInventoriesPath>
 		<HexalithInventoriesVersion Condition="'$(HexalithInventoriesVersion)' == ''">*</HexalithInventoriesVersion>
+		<HexalithPartiesPath Condition="'$(HexalithPartiesPath)' == ''">$(HexalithPath)..\Hexalith.Parties\</HexalithPartiesPath>
+		<HexalithPartiesVersion Condition="'$(HexalithPartiesVersion)' == ''">*</HexalithPartiesVersion>
+		<HexalithExternalSystemsPath Condition="'$(HexalithExternalSystemsPath)' == ''">$(HexalithPath)..\Hexalith.ExternalSystems\</HexalithExternalSystemsPath>
+		<HexalithExternalSystemsVersion Condition="'$(HexalithExternalSystemsVersion)' == ''">*</HexalithExternalSystemsVersion>
+		<HexalithSalesPath Condition="'$(HexalithSalesPath)' == ''">$(HexalithPath)..\Hexalith.Sales\</HexalithSalesPath>
+		<HexalithSalesVersion Condition="'$(HexalithSalesVersion)' == ''">*</HexalithSalesVersion>
 	</PropertyGroup>
 </Project>

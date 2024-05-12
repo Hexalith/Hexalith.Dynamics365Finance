@@ -5,8 +5,11 @@
 	<ItemGroup>
 		<PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="$(SwashbuckleAspNetCoreVersion)" />
 	</ItemGroup>
+	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' == 'true' or '$(BuildingByReSharper)' == 'true'">
+		<ProjectReference Include="$(HexalithSalesPath)\src\Application\Hexalith.Sales.Application\Hexalith.Sales.Application.csproj" />
+	</ItemGroup>
 	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' != 'true' and '$(BuildingByReSharper)' != 'true'">
-		<PackageReference Include="Hexalith.Application.Sales" Version="$(HexalithVersion)" />
+		<PackageReference Include="Hexalith.Sales.Application" Version="$(HexalithVersion)" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Hexalith.Dynamics365Finance.Retail\Hexalith.Dynamics365Finance.Retail.csproj" />

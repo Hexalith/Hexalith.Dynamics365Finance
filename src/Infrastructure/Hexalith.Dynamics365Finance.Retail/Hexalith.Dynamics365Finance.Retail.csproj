@@ -5,9 +5,13 @@
 	<ItemGroup>
 		<PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="$(SwashbuckleAspNetCoreVersion)" />
 	</ItemGroup>
+	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' == 'true' or '$(BuildingByReSharper)' == 'true'">
+		<ProjectReference Include="$(HexalithPartiesPath)\src\Application\Hexalith.Parties.Application\Hexalith.Parties.Application.csproj" />
+		<ProjectReference Include="$(HexalithExternalSystemsPath)\src\Application\Hexalith.ExternalSystems.Application\Hexalith.ExternalSystems.Application.csproj" />
+	</ItemGroup>
 	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' != 'true' and '$(BuildingByReSharper)' != 'true'">
-		<PackageReference Include="Hexalith.Application.Parties" Version="$(HexalithVersion)" />
-		<PackageReference Include="Hexalith.Application.ExternalSystems" Version="$(HexalithVersion)" />
+		<PackageReference Include="Hexalith.Parties.Application" Version="$(HexalithVersion)" />
+		<PackageReference Include="Hexalith.ExternalSystems.Application" Version="$(HexalithVersion)" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Hexalith.Dynamics365Finance\Hexalith.Dynamics365Finance.csproj" />
