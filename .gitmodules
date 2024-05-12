@@ -4,3 +4,12 @@
 [submodule "Hexalith.Inventories"]
 	path = Hexalith.Inventories
 	url = https://github.com/Hexalith/Hexalith.Inventories.git
+[submodule "Hexalith.Parties"]
+	path = Hexalith.Parties
+	url = https://github.com/Hexalith/Hexalith.Parties.git
+[submodule "Hexalith.Sales"]
+	path = Hexalith.Sales
+	url = https://github.com/Hexalith/Hexalith.Sales.git
+[submodule "Hexalith.ExternalSystems"]
+	path = Hexalith.ExternalSystems
+	url = https://github.com/Hexalith/Hexalith.ExternalSystems.git
