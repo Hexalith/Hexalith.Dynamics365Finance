@@ -154,9 +154,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Inventories.Domain
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_build", "_build", "{38736D76-91BB-4A00-AA11-420C74928B26}"
 	ProjectSection(SolutionItems) = preProject
-		Hexalith.Inventories\.editorconfig = Hexalith.Inventories\.editorconfig
-		Hexalith.Inventories\src\BuildFiles\.stylecop.json = Hexalith.Inventories\src\BuildFiles\.stylecop.json
-		Hexalith.Inventories\src\BuildFiles\.stylecop.ruleset = Hexalith.Inventories\src\BuildFiles\.stylecop.ruleset
 		Hexalith.Inventories\Directory.Build.props = Hexalith.Inventories\Directory.Build.props
 		Hexalith.Inventories\src\BuildFiles\Project.Common.props = Hexalith.Inventories\src\BuildFiles\Project.Common.props
 	EndProjectSection
@@ -286,6 +283,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_global", "_global", "{BDB9
 		Hexalith.ExternalSystems\.gitignore = Hexalith.ExternalSystems\.gitignore
 		Hexalith.ExternalSystems\src\BuildFiles\.stylecop.json = Hexalith.ExternalSystems\src\BuildFiles\.stylecop.json
 		Hexalith.ExternalSystems\src\BuildFiles\.stylecop.ruleset = Hexalith.ExternalSystems\src\BuildFiles\.stylecop.ruleset
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_global", "_global", "{B2E6E100-6ECE-4246-852C-56EACB4A4E4A}"
+	ProjectSection(SolutionItems) = preProject
+		Hexalith.Inventories\.editorconfig = Hexalith.Inventories\.editorconfig
+		Hexalith.Inventories\src\BuildFiles\.stylecop.json = Hexalith.Inventories\src\BuildFiles\.stylecop.json
+		Hexalith.Inventories\src\BuildFiles\.stylecop.ruleset = Hexalith.Inventories\src\BuildFiles\.stylecop.ruleset
 	EndProjectSection
 EndProject
 Global
@@ -740,6 +744,7 @@ Global
 		{B676341A-5EFC-44DD-BC96-A14483352652} = {2933EEEB-7A7A-4D67-9968-7E0F19BC6EC3}
 		{CDC0BEAD-E265-4892-8E44-7991B1663216} = {6DCC825D-02D0-4F25-9A3D-A530736AB837}
 		{BDB9FCF4-F575-4E87-A2D1-EB408025FC36} = {810883B3-1803-4B4E-BF5E-F078393FA0F0}
+		{B2E6E100-6ECE-4246-852C-56EACB4A4E4A} = {8D412594-322C-46FC-BADC-F4AE6DFFB6A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09CBB595-8996-4C7F-9C48-4C58AD9293AC}
