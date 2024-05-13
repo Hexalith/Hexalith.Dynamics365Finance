@@ -3,5 +3,7 @@ az acr login -n christofle
 $version=(minver -t v -v e -d preview)
 dotnet restore --no-cache
 cd ./Hexalith.Server.Dynamics365Finance
-dotnet publish /t:PublishContainer -c Release -p ContainerRegistry="christofle.azurecr.io" -p ContainerImageTag=$version
+dotnet restore --no-cache
+dotnet build --no-restore --disable-build-servers --no-incremental -c Release 
+dotnet publish --no-build /t:PublishContainer -c Release -p ContainerRegistry="christofle.azurecr.io" -p ContainerImageTag=$version
 pause

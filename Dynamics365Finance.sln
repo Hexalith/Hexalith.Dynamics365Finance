@@ -277,6 +277,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_global", "_global", "{CDC0
 		src\BuildFiles\.stylecop.json = src\BuildFiles\.stylecop.json
 		src\BuildFiles\.stylecop.ruleset = src\BuildFiles\.stylecop.ruleset
 		LICENSE = LICENSE
+		src\Servers\publish_containers.ps1 = src\Servers\publish_containers.ps1
 		README.md = README.md
 	EndProjectSection
 EndProject
