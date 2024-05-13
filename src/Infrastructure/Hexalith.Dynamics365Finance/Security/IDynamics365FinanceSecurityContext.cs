@@ -14,7 +14,7 @@
 
 namespace Hexalith.Dynamics365Finance.Security;
 
-using Hexalith.Infrastructure.Security.Abstractions;
+using Hexalith.Infrastructure.AzureActiveDirectory;
 
 /// <summary>
 /// The Dynamics 365 Finance and Operations security context.
