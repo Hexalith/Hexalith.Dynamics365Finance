@@ -237,12 +237,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Parties.GoogleMaps
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_build", "_build", "{4251697F-18AA-4D69-8599-FB68FF57795D}"
 	ProjectSection(SolutionItems) = preProject
-		Hexalith.ExternalSystems\.editorconfig = Hexalith.ExternalSystems\.editorconfig
-		Hexalith.ExternalSystems\.gitignore = Hexalith.ExternalSystems\.gitignore
-		Hexalith.ExternalSystems\src\BuildFiles\.stylecop.json = Hexalith.ExternalSystems\src\BuildFiles\.stylecop.json
-		Hexalith.ExternalSystems\src\BuildFiles\.stylecop.ruleset = Hexalith.ExternalSystems\src\BuildFiles\.stylecop.ruleset
 		Hexalith.ExternalSystems\Directory.Build.props = Hexalith.ExternalSystems\Directory.Build.props
+		Hexalith.Inventories\.github\workflows\hexalith_build.yml = Hexalith.Inventories\.github\workflows\hexalith_build.yml
 		Hexalith.ExternalSystems\src\BuildFiles\Project.Common.props = Hexalith.ExternalSystems\src\BuildFiles\Project.Common.props
+		Hexalith.Inventories\.github\workflows\semgrep.yml = Hexalith.Inventories\.github\workflows\semgrep.yml
+		Hexalith.Inventories\.github\workflows\sonarqube.yml = Hexalith.Inventories\.github\workflows\sonarqube.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hexalith.Sales", "Hexalith.Sales", "{36AFD4DF-F38B-4902-8D53-ED7ADF5010DB}"
@@ -279,6 +278,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_global", "_global", "{CDC0
 		LICENSE = LICENSE
 		src\Servers\publish_containers.ps1 = src\Servers\publish_containers.ps1
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_global", "_global", "{BDB9FCF4-F575-4E87-A2D1-EB408025FC36}"
+	ProjectSection(SolutionItems) = preProject
+		Hexalith.ExternalSystems\.editorconfig = Hexalith.ExternalSystems\.editorconfig
+		Hexalith.ExternalSystems\.gitignore = Hexalith.ExternalSystems\.gitignore
+		Hexalith.ExternalSystems\src\BuildFiles\.stylecop.json = Hexalith.ExternalSystems\src\BuildFiles\.stylecop.json
+		Hexalith.ExternalSystems\src\BuildFiles\.stylecop.ruleset = Hexalith.ExternalSystems\src\BuildFiles\.stylecop.ruleset
 	EndProjectSection
 EndProject
 Global
@@ -732,6 +739,7 @@ Global
 		{1FCCE115-83C5-4B37-BF42-23C5EA4D8CDE} = {2933EEEB-7A7A-4D67-9968-7E0F19BC6EC3}
 		{B676341A-5EFC-44DD-BC96-A14483352652} = {2933EEEB-7A7A-4D67-9968-7E0F19BC6EC3}
 		{CDC0BEAD-E265-4892-8E44-7991B1663216} = {6DCC825D-02D0-4F25-9A3D-A530736AB837}
+		{BDB9FCF4-F575-4E87-A2D1-EB408025FC36} = {810883B3-1803-4B4E-BF5E-F078393FA0F0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09CBB595-8996-4C7F-9C48-4C58AD9293AC}
