@@ -4,7 +4,7 @@ Hexalith Dynamics 365 Finance connector microservice
 ## Build status
 
 [![Build status](https://github.com/Hexalith/Hexalith.Dynamics365Finance/actions/workflows/hexalith_build.yml/badge.svg)](https://github.com/Hexalith/Hexalith.Dynamics365Finance/actions)
-[![NuGet](https://img.shields.io/nuget/v/Hexalith.Dynamics365Finance.Domain.Abstractions.svg)](https://www.nuget.org/packages/Hexalith.Dynamics365Finance.Domain.Abstractions)
+[![NuGet](https://img.shields.io/nuget/v/Hexalith.Dynamics365Finance.svg)](https://www.nuget.org/packages/Hexalith.Dynamics365Finance)
 [![License: MIT](https://img.shields.io/github/license/hexalith/hexalith.dynamics365finance)](https://github.com/hexalith/hexalith.dynamics365finance/blob/main/LICENSE)
 [![Discord](https://img.shields.io/discord/1063152441819942922?label=Discord&logo=discord&logoColor=white&color=d82679)](https://discordapp.com/channels/1102166958918610994/1102166958918610997)
 <br/>
