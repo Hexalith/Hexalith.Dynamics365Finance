@@ -94,12 +94,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_build", "_build", "{3A505FC6-CBD6-4D4F-BF48-329C3148282B}"
 	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-		src\BuildFiles\.stylecop.json = src\BuildFiles\.stylecop.json
-		src\BuildFiles\.stylecop.ruleset = src\BuildFiles\.stylecop.ruleset
 		Directory.Build.props = Directory.Build.props
 		Hexalith.props = Hexalith.props
+		.github\workflows\hexalith_build.yml = .github\workflows\hexalith_build.yml
 		src\BuildFiles\Project.Common.props = src\BuildFiles\Project.Common.props
+		.github\workflows\semgrep.yml = .github\workflows\semgrep.yml
+		.github\workflows\sonarqube.yml = .github\workflows\sonarqube.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servers", "Servers", "{E0E8D9A4-0B77-4F2D-BD6E-7931FEE42ACB}"
@@ -270,6 +270,15 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Sales.CommandsWebApis", "Hexalith.Sales\src\Infrastructure\Hexalith.Sales.CommandsWebApis\Hexalith.Sales.CommandsWebApis.csproj", "{1FCCE115-83C5-4B37-BF42-23C5EA4D8CDE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Sales.EventsWebApis", "Hexalith.Sales\src\Infrastructure\Hexalith.Sales.EventsWebApis\Hexalith.Sales.EventsWebApis.csproj", "{B676341A-5EFC-44DD-BC96-A14483352652}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_global", "_global", "{CDC0BEAD-E265-4892-8E44-7991B1663216}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		src\BuildFiles\.stylecop.json = src\BuildFiles\.stylecop.json
+		src\BuildFiles\.stylecop.ruleset = src\BuildFiles\.stylecop.ruleset
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -721,6 +730,7 @@ Global
 		{ECAA39A5-9140-4326-A2A4-FEEE80BD9782} = {2933EEEB-7A7A-4D67-9968-7E0F19BC6EC3}
 		{1FCCE115-83C5-4B37-BF42-23C5EA4D8CDE} = {2933EEEB-7A7A-4D67-9968-7E0F19BC6EC3}
 		{B676341A-5EFC-44DD-BC96-A14483352652} = {2933EEEB-7A7A-4D67-9968-7E0F19BC6EC3}
+		{CDC0BEAD-E265-4892-8E44-7991B1663216} = {6DCC825D-02D0-4F25-9A3D-A530736AB837}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09CBB595-8996-4C7F-9C48-4C58AD9293AC}
