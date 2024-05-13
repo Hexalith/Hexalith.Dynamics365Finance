@@ -10,9 +10,9 @@ Hexalith Dynamics 365 Finance connector microservice
 <br/>
 <a href="https://scan.coverity.com/projects/hexalith-hexalith-dynamics365finance">
   <img alt="Coverity Scan Build Status"
-       src="https://scan.coverity.com/projects/30227/badge.svg"/>
+       src="https://scan.coverity.com/projects/30232/badge.svg"/>
 </a>
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/c716735b47b84a7abb8c510ab4827617)](https://app.codacy.com/gh/Hexalith/Hexalith.Dynamics365Finance/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/24eb55a9a14944da8356e42ef9956da3)](https://app.codacy.com/gh/Hexalith/Hexalith.Dynamics365Finance/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 <br/>
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Hexalith_Hexalith.Dynamics365Finance&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Hexalith_Hexalith.Dynamics365Finance)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Hexalith_Hexalith.Dynamics365Finance&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Hexalith_Hexalith.Dynamics365Finance)
