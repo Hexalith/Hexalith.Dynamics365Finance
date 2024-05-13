@@ -19,11 +19,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-using Hexalith.Application.ExternalSystems.Services;
 using Hexalith.Application.Organizations.Configurations;
-using Hexalith.Domain.Events;
-using Hexalith.Extensions.Common;
-using Hexalith.Extensions.Configuration;
 using Hexalith.Dynamics365Finance.Client;
 using Hexalith.Dynamics365Finance.Parties.Configuration;
 using Hexalith.Dynamics365Finance.Parties.Customers.Entities;
@@ -31,6 +27,10 @@ using Hexalith.Dynamics365Finance.Parties.Customers.Filters;
 using Hexalith.Dynamics365Finance.Parties.Customers.Helpers;
 using Hexalith.Dynamics365Finance.Retail.Stores.Entities;
 using Hexalith.Dynamics365Finance.Retail.Stores.Filters;
+using Hexalith.Extensions.Common;
+using Hexalith.Extensions.Configuration;
+using Hexalith.ExternalSystems.Application.Services;
+using Hexalith.Parties.Events;
 
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -460,30 +460,6 @@ public partial class Dynamics365FinanceCustomerService : IDynamics365FinanceCust
         if (customerId != null)
         {
             LogDynamicsExternalCodeFoundInformation(companyId, customerId, originId, externalId);
-        }
-
-        return customerId;
-    }
-
-    /// <summary>
-    /// Find external code as an asynchronous operation.
-    /// </summary>
-    /// <param name="originId">The origin identifier.</param>
-    /// <param name="externalId">The external identifier.</param>
-    /// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-    /// <returns>A Task&lt;string?&gt; representing the asynchronous operation.</returns>
-    private async Task<string?> FindExternalCodeAsync(string originId, string externalId, CancellationToken cancellationToken)
-    {
-        IEnumerable<CustomerExternalSystemCode> externalCodes = await _externalCodeService
-             .GetAsync(
-                 new CrossCompanyCustomerExternalCodeFilter(
-                 originId,
-                 externalId),
-                 cancellationToken).ConfigureAwait(false);
-        string? customerId = externalCodes.FirstOrDefault()?.CustomerAccountNumber;
-        if (customerId != null)
-        {
-            LogDynamicsExternalCodeFoundInformation(customerId, originId, externalId);
         }
 
         return customerId;

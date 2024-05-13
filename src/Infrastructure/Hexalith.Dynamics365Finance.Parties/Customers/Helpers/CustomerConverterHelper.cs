@@ -20,11 +20,11 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
-using Hexalith.Application.Parties.Commands;
-using Hexalith.Domain.Events;
-using Hexalith.Domain.ValueObjets;
-using Hexalith.Extensions.Common;
 using Hexalith.Dynamics365Finance.Parties.Customers.Entities;
+using Hexalith.Extensions.Common;
+using Hexalith.Parties.Commands;
+using Hexalith.Parties.Domain.ValueObjets;
+using Hexalith.Parties.Events;
 
 /// <summary>
 /// Class CustomerConverter.
@@ -98,7 +98,7 @@ public static class CustomerConverterHelper
     /// <param name="mobile">The mobile.</param>
     /// <param name="title">The title.</param>
     /// <param name="birthDate">The birth date.</param>
-    /// <returns>Hexalith.Application.Parties.Commands.ChangeCustomerInformation.</returns>
+    /// <returns>Hexalith.Parties.Commands.ChangeCustomerInformation.</returns>
     public static ChangeCustomerInformation ToChangeCustomerCommand(
             [NotNull] this CustomerV3 customer,
             string partitionId,
@@ -521,7 +521,7 @@ public static class CustomerConverterHelper
     /// <param name="mobile">The mobile.</param>
     /// <param name="title">The title.</param>
     /// <param name="birthDate">The birth date.</param>
-    /// <returns>Hexalith.Application.Parties.Commands.ChangeCustomerInformation.</returns>
+    /// <returns>Hexalith.Parties.Commands.ChangeCustomerInformation.</returns>
     public static RegisterOrChangeCustomer ToRegisterOrChangeCustomerCommand(
             [NotNull] this CustomerV3 customer,
             string partitionId,

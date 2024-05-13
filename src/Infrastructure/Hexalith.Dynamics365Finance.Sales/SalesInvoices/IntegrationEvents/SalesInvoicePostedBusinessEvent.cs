@@ -22,6 +22,7 @@ using System.Text.Json.Serialization;
 using Hexalith.Domain.Aggregates;
 using Hexalith.Dynamics365Finance.BusinessEvents;
 using Hexalith.Infrastructure.Serialization.Serialization;
+using Hexalith.Sales.Domain.Helpers;
 
 /// <summary>
 /// This is the base class for logistics partner catalog events from Dynamics 365 for finance and operations.
@@ -38,7 +39,7 @@ public class SalesInvoicePostedBusinessEvent : Dynamics365BusinessEventBase
         InvoiceId;
 
     /// <inheritdoc/>
-    public override string AggregateName => nameof(Dynamics365Finance) + SalesInvoice.GetAggregateName();
+    public override string AggregateName => nameof(Dynamics365Finance) + SalesDomainHelper.SalesInvoiceAggregateName;
 
     /// <summary>
     /// Gets or sets the invoice customer account.

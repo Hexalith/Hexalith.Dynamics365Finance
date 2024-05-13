@@ -20,8 +20,10 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 using Hexalith.Domain.Aggregates;
-using Hexalith.Domain.ValueObjets;
 using Hexalith.Dynamics365Finance.BusinessEvents;
+using Hexalith.ExternalSystems.Domain.ValueObjets;
+using Hexalith.Parties.Domain.Helpers;
+using Hexalith.Parties.Domain.ValueObjets;
 
 /// <summary>
 /// This is the base class for logistics partner catalog events from Dynamics 365 for finance and operations.
@@ -45,7 +47,7 @@ public abstract class Dynamics365FinanceCustomerInformationBusinessEvent : Dynam
         Account;
 
     /// <inheritdoc/>
-    public override string AggregateName => nameof(Dynamics365Finance) + Customer.GetAggregateName();
+    public override string AggregateName => nameof(Dynamics365Finance) + PartiesDomainHelper.CustomerAggregateName;
 
     /// <summary>
     /// Gets or sets the commission sales group identifier.

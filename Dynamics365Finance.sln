@@ -253,6 +253,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{2933EEEB-7A7A-4D67-9968-7E0F19BC6EC3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Sales.Domain.Abstractions", "Hexalith.Sales\src\Domain\Hexalith.Sales.Domain.Abstractions\Hexalith.Sales.Domain.Abstractions.csproj", "{FEE33BA5-782F-4CB8-91A3-5DB61496C7A9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Sales.Events", "Hexalith.Sales\src\Domain\Hexalith.Sales.Events\Hexalith.Sales.Events.csproj", "{C3936E6B-47BF-4379-8C1E-57984678CC13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Sales.Domain", "Hexalith.Sales\src\Domain\Hexalith.Sales.Domain\Hexalith.Sales.Domain.csproj", "{2A1F8D6D-6B9B-42EF-9623-7D1067A6AA6B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Sales.Commands", "Hexalith.Sales\src\Application\Hexalith.Sales.Commands\Hexalith.Sales.Commands.csproj", "{6EBB561D-25BA-4977-BFAB-C373D92A3B61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Sales.Application", "Hexalith.Sales\src\Application\Hexalith.Sales.Application\Hexalith.Sales.Application.csproj", "{50B3A7D2-54CF-48F6-9B49-AF5F470ACF44}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Sales.DaprRuntime.Abstractions", "Hexalith.Sales\src\Infrastructure\Hexalith.Sales.DaprRuntime.Abstractions\Hexalith.Sales.DaprRuntime.Abstractions.csproj", "{4904764A-C315-4BF9-8816-455EEAB337F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Sales.DaprRuntime", "Hexalith.Sales\src\Infrastructure\Hexalith.Sales.DaprRuntime\Hexalith.Sales.DaprRuntime.csproj", "{ECAA39A5-9140-4326-A2A4-FEEE80BD9782}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Sales.CommandsWebApis", "Hexalith.Sales\src\Infrastructure\Hexalith.Sales.CommandsWebApis\Hexalith.Sales.CommandsWebApis.csproj", "{1FCCE115-83C5-4B37-BF42-23C5EA4D8CDE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexalith.Sales.EventsWebApis", "Hexalith.Sales\src\Infrastructure\Hexalith.Sales.EventsWebApis\Hexalith.Sales.EventsWebApis.csproj", "{B676341A-5EFC-44DD-BC96-A14483352652}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -555,6 +573,42 @@ Global
 		{67EFFAD5-6BDA-4BA8-9109-7638F2EC73A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67EFFAD5-6BDA-4BA8-9109-7638F2EC73A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67EFFAD5-6BDA-4BA8-9109-7638F2EC73A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEE33BA5-782F-4CB8-91A3-5DB61496C7A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEE33BA5-782F-4CB8-91A3-5DB61496C7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEE33BA5-782F-4CB8-91A3-5DB61496C7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEE33BA5-782F-4CB8-91A3-5DB61496C7A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3936E6B-47BF-4379-8C1E-57984678CC13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3936E6B-47BF-4379-8C1E-57984678CC13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3936E6B-47BF-4379-8C1E-57984678CC13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3936E6B-47BF-4379-8C1E-57984678CC13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A1F8D6D-6B9B-42EF-9623-7D1067A6AA6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A1F8D6D-6B9B-42EF-9623-7D1067A6AA6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A1F8D6D-6B9B-42EF-9623-7D1067A6AA6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A1F8D6D-6B9B-42EF-9623-7D1067A6AA6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EBB561D-25BA-4977-BFAB-C373D92A3B61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EBB561D-25BA-4977-BFAB-C373D92A3B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EBB561D-25BA-4977-BFAB-C373D92A3B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EBB561D-25BA-4977-BFAB-C373D92A3B61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50B3A7D2-54CF-48F6-9B49-AF5F470ACF44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50B3A7D2-54CF-48F6-9B49-AF5F470ACF44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50B3A7D2-54CF-48F6-9B49-AF5F470ACF44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50B3A7D2-54CF-48F6-9B49-AF5F470ACF44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4904764A-C315-4BF9-8816-455EEAB337F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4904764A-C315-4BF9-8816-455EEAB337F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4904764A-C315-4BF9-8816-455EEAB337F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4904764A-C315-4BF9-8816-455EEAB337F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECAA39A5-9140-4326-A2A4-FEEE80BD9782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECAA39A5-9140-4326-A2A4-FEEE80BD9782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECAA39A5-9140-4326-A2A4-FEEE80BD9782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECAA39A5-9140-4326-A2A4-FEEE80BD9782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FCCE115-83C5-4B37-BF42-23C5EA4D8CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FCCE115-83C5-4B37-BF42-23C5EA4D8CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FCCE115-83C5-4B37-BF42-23C5EA4D8CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FCCE115-83C5-4B37-BF42-23C5EA4D8CDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B676341A-5EFC-44DD-BC96-A14483352652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B676341A-5EFC-44DD-BC96-A14483352652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B676341A-5EFC-44DD-BC96-A14483352652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B676341A-5EFC-44DD-BC96-A14483352652}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -658,6 +712,15 @@ Global
 		{BBB67B81-6BAF-480F-AD43-B43CEF9A46A4} = {36AFD4DF-F38B-4902-8D53-ED7ADF5010DB}
 		{84B7D03F-5FEF-4769-8984-326080307307} = {36AFD4DF-F38B-4902-8D53-ED7ADF5010DB}
 		{2933EEEB-7A7A-4D67-9968-7E0F19BC6EC3} = {36AFD4DF-F38B-4902-8D53-ED7ADF5010DB}
+		{FEE33BA5-782F-4CB8-91A3-5DB61496C7A9} = {BBB67B81-6BAF-480F-AD43-B43CEF9A46A4}
+		{C3936E6B-47BF-4379-8C1E-57984678CC13} = {BBB67B81-6BAF-480F-AD43-B43CEF9A46A4}
+		{2A1F8D6D-6B9B-42EF-9623-7D1067A6AA6B} = {BBB67B81-6BAF-480F-AD43-B43CEF9A46A4}
+		{6EBB561D-25BA-4977-BFAB-C373D92A3B61} = {84B7D03F-5FEF-4769-8984-326080307307}
+		{50B3A7D2-54CF-48F6-9B49-AF5F470ACF44} = {84B7D03F-5FEF-4769-8984-326080307307}
+		{4904764A-C315-4BF9-8816-455EEAB337F2} = {2933EEEB-7A7A-4D67-9968-7E0F19BC6EC3}
+		{ECAA39A5-9140-4326-A2A4-FEEE80BD9782} = {2933EEEB-7A7A-4D67-9968-7E0F19BC6EC3}
+		{1FCCE115-83C5-4B37-BF42-23C5EA4D8CDE} = {2933EEEB-7A7A-4D67-9968-7E0F19BC6EC3}
+		{B676341A-5EFC-44DD-BC96-A14483352652} = {2933EEEB-7A7A-4D67-9968-7E0F19BC6EC3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09CBB595-8996-4C7F-9C48-4C58AD9293AC}

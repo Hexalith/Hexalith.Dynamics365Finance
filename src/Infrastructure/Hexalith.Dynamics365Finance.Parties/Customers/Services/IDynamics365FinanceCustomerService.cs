@@ -15,8 +15,8 @@
 // ***********************************************************************
 namespace Hexalith.Dynamics365Finance.Parties.Customers.Services;
 
-using Hexalith.Domain.Events;
 using Hexalith.Dynamics365Finance.Parties.Customers.Entities;
+using Hexalith.Parties.Events;
 
 /// <summary>
 /// Interface IDynamics365FinanceCustomerService.

@@ -18,10 +18,10 @@ namespace Hexalith.Dynamics365Finance.UnitTests.Parties.Customers.Helpers;
 
 using FluentAssertions;
 
-using Hexalith.Domain.Events;
-using Hexalith.Domain.ValueObjets;
 using Hexalith.Dynamics365Finance.Parties.Customers.Entities;
 using Hexalith.Dynamics365Finance.Parties.Customers.Helpers;
+using Hexalith.Parties.Domain.ValueObjets;
+using Hexalith.Parties.Events;
 
 using Xunit;
 

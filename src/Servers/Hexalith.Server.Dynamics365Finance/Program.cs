@@ -6,23 +6,23 @@
 
 using Hexalith.Application.Events;
 using Hexalith.Application.Organizations.Helpers;
-using Hexalith.Domain.Aggregates;
-using Hexalith.Domain.Events;
 using Hexalith.Dynamics365Finance.Inventories.PartnerInventoryItems.Helpers;
 using Hexalith.Dynamics365Finance.Parties.Customers.IntegrationEvents;
 using Hexalith.Dynamics365Finance.Parties.Helpers;
+using Hexalith.ExternalSystems.EventsWebApis.Helpers;
 using Hexalith.Infrastructure.DaprRuntime.ExternalSystems.Helpers;
 using Hexalith.Infrastructure.DaprRuntime.Helpers;
-using Hexalith.Infrastructure.DaprRuntime.Parties.Helpers;
-using Hexalith.Infrastructure.WebApis.ExternalSystemsEvents.Helpers;
 using Hexalith.Infrastructure.WebApis.Helpers;
-using Hexalith.Infrastructure.WebApis.PartiesEvents.Helpers;
 using Hexalith.Inventories.Domain.InventoryItems;
 using Hexalith.Inventories.Domain.PartnerInventoryItems;
 using Hexalith.Inventories.EventsWebApis.Helpers;
+using Hexalith.Parties.DaprRuntime.Helpers;
+using Hexalith.Parties.Domain.Helpers;
+using Hexalith.Parties.Events;
+using Hexalith.Parties.EventsWebApis.Helpers;
 using Hexalith.Server.Dynamics365Finance;
 
-IEnumerable<string> aggregateNames = [Customer.GetAggregateName()];
+IEnumerable<string> aggregateNames = [PartiesDomainHelper.CustomerAggregateName];
 WebApplicationBuilder builder = HexalithWebApi.CreateApplication(
     Dynamics365FinanceConstants.ApplicationName,
     "v1",

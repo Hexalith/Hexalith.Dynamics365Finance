@@ -18,9 +18,9 @@ namespace Hexalith.Dynamics365Finance.Parties.Customers.IntegrationEvents;
 
 using Hexalith.Application.Commands;
 using Hexalith.Application.Events;
-using Hexalith.Domain.Events;
 using Hexalith.Dynamics365Finance.Parties.Configuration;
 using Hexalith.Dynamics365Finance.Parties.Customers.Services;
+using Hexalith.Parties.Events;
 
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;

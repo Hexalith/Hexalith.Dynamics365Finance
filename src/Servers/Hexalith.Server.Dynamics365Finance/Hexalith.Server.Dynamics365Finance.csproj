@@ -21,12 +21,14 @@
 	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' == 'true' or '$(BuildingByReSharper)' == 'true'">
 		<ProjectReference Include="$(HexalithExternalSystemsPath)\src\Infrastructure\Hexalith.ExternalSystems.EventsWebApis\Hexalith.ExternalSystems.EventsWebApis.csproj" />
 		<ProjectReference Include="$(HexalithPartiesPath)\src\Infrastructure\Hexalith.Parties.EventsWebApis\Hexalith.Parties.EventsWebApis.csproj" />
+		<ProjectReference Include="$(HexalithPartiesPath)\src\Infrastructure\Hexalith.Parties.DaprRuntime\Hexalith.Parties.DaprRuntime.csproj" />
 		<ProjectReference Include="$(HexalithSalesPath)\src\Infrastructure\Hexalith.Sales.EventsWebApis\Hexalith.Sales.EventsWebApis.csproj" />
 		<ProjectReference Include="$(HexalithInventoriesPath)\src\Infrastructure\Hexalith.Inventories.EventsWebApis\Hexalith.Inventories.EventsWebApis.csproj" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(BuildingInsideVisualStudio)' != 'true' and '$(BuildingByReSharper)' != 'true'">
 		<PackageReference Include="Hexalith.ExternalSystems.EventsWebApis" Version="$(HexalithVersion)" />
 		<PackageReference Include="Hexalith.Parties.EventsWebApis" Version="$(HexalithVersion)" />
+		<PackageReference Include="Hexalith.Parties.DaprRuntime" Version="$(HexalithVersion)" />
 		<PackageReference Include="Hexalith.Sales.EventsWebApis" Version="$(HexalithVersion)" />
 		<PackageReference Include="Hexalith.Inventories.EventsWebApis" Version="$(HexalithVersion)" />
 	</ItemGroup>

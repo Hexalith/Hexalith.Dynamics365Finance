@@ -17,20 +17,22 @@ namespace Hexalith.Dynamics365Finance.Parties.Customers.BusinessEvents;
 
 using Hexalith.Application.Commands;
 using Hexalith.Application.Events;
-using Hexalith.Application.ExternalSystems.Commands;
-using Hexalith.Application.ExternalSystems.Services;
 using Hexalith.Application.Organizations.Configurations;
-using Hexalith.Application.Parties.Commands;
-using Hexalith.Application.Parties.Helpers;
 using Hexalith.Domain.Aggregates;
-using Hexalith.Domain.ValueObjets;
-using Hexalith.Extensions.Common;
-using Hexalith.Extensions.Configuration;
-using Hexalith.Infrastructure.DaprRuntime.Projections;
 using Hexalith.Dynamics365Finance.Client;
 using Hexalith.Dynamics365Finance.Parties.Customers.Entities;
 using Hexalith.Dynamics365Finance.Parties.Customers.Filters;
 using Hexalith.Dynamics365Finance.Parties.Customers.Helpers;
+using Hexalith.Extensions.Common;
+using Hexalith.Extensions.Configuration;
+using Hexalith.ExternalSystems.Application.Commands;
+using Hexalith.ExternalSystems.Application.Services;
+using Hexalith.ExternalSystems.Domain.ValueObjets;
+using Hexalith.Infrastructure.DaprRuntime.Projections;
+using Hexalith.Parties.Application.Helpers;
+using Hexalith.Parties.Commands;
+using Hexalith.Parties.Domain.Aggregates;
+using Hexalith.Parties.Domain.Helpers;
 
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -184,7 +186,7 @@ public partial class Dynamics365FinanceCustomerChangedHandler : IntegrationEvent
                 externalReferenceFound = false;
                 aggregateId = await _externalReferenceMapperService
                     .GetAggregateIdAsync(
-                        Customer.GetAggregateName(),
+                        PartiesDomainHelper.CustomerAggregateName,
                         _partitionId,
                         baseEvent.BusinessEventLegalEntity.ToUpperInvariant(),
                         _originId,
@@ -195,7 +197,7 @@ public partial class Dynamics365FinanceCustomerChangedHandler : IntegrationEvent
 
             if (string.IsNullOrWhiteSpace(aggregateId))
             {
-                aggregateId = Customer.GetAggregateId(
+                aggregateId = PartiesDomainHelper.GetCustomerAggregateId(
                     _partitionId,
                     baseEvent.BusinessEventLegalEntity.ToUpperInvariant(),
                     _originId,
@@ -311,43 +313,6 @@ public partial class Dynamics365FinanceCustomerChangedHandler : IntegrationEvent
     }
 
     /// <summary>
-    /// Gets the postal address.
-    /// </summary>
-    /// <param name="previousAddress">The previous address.</param>
-    /// <param name="newAddress">The new address.</param>
-    /// <returns>Hexalith.Domain.ValueObjets.PostalAddress?.</returns>
-    private static PostalAddress? GetPostalAddress(PostalAddress? previousAddress, PostalAddress? newAddress)
-    {
-        if (previousAddress == null)
-        {
-            return (newAddress == null) ? null : new PostalAddress(newAddress);
-        }
-
-        if (newAddress == null)
-        {
-            return previousAddress;
-        }
-
-        PostalAddress address = new(newAddress)
-        {
-            CountyId = newAddress.CountyId ?? previousAddress.CountyId,
-            StateId = newAddress.StateId ?? previousAddress.StateId,
-            CountryId = newAddress.CountryId ?? previousAddress.CountryId,
-            City = newAddress.City ?? previousAddress.City,
-            Street = newAddress.Street ?? previousAddress.Street,
-            ZipCode = newAddress.ZipCode ?? previousAddress.ZipCode,
-            StreetNumber = newAddress.StreetNumber ?? previousAddress.StreetNumber,
-            CountryName = newAddress.CountryName ?? previousAddress.CountryName,
-            StateName = newAddress.StateName ?? previousAddress.StateName,
-            Name = newAddress.Name ?? previousAddress.Name,
-            CountryIso2 = newAddress.CountryIso2 ?? previousAddress.CountryIso2,
-            Description = newAddress.Description ?? previousAddress.Description,
-            PostBox = newAddress.PostBox ?? previousAddress.PostBox,
-        };
-        return address;
-    }
-
-    /// <summary>
     /// Gets the customer changed.
     /// </summary>
     /// <param name="partitionId">The partition identifier.</param>
@@ -359,7 +324,7 @@ public partial class Dynamics365FinanceCustomerChangedHandler : IntegrationEvent
     /// <param name="customerBase">The customer base.</param>
     /// <param name="customerV3">The customer v3.</param>
     /// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-    /// <returns>Hexalith.Application.Parties.Commands.RegisterOrChangeCustomer.</returns>
+    /// <returns>Hexalith.Parties.Commands.RegisterOrChangeCustomer.</returns>
     private RegisterOrChangeCustomer GetCustomerChanged(
         string partitionId,
         string companyId,

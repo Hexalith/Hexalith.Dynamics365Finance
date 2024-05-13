@@ -4,12 +4,13 @@
 //     See LICENSE file in the project root for full license information.
 // </copyright>
 
-namespace Hexalith.UnitTests.Core.Infrastructure.Dynamics365Finance.Parties.Customers.BusinessEvents;
+namespace Hexalith.Dynamics365Finance.UnitTests.Parties.Customers.BusinessEvents;
 
 using FluentAssertions;
 
-using Hexalith.Domain.ValueObjets;
 using Hexalith.Dynamics365Finance.Parties.Customers.BusinessEvents;
+using Hexalith.ExternalSystems.Domain.ValueObjets;
+using Hexalith.Parties.Domain.ValueObjets;
 
 using Xunit;
 
