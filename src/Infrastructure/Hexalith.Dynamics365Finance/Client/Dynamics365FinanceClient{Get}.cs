@@ -178,7 +178,7 @@ public partial class Dynamics365FinanceClient<TEntity> : IDynamics365FinanceClie
     public async Task<IEnumerable<TEntity>> GetCommonAsync([NotNull] IDictionary<string, object?> filter, CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(filter);
-        Uri url = new(_instance, $"{_dataPath}/{TEntity.EntityName()}/?cross-company=true$filter={HttpUtility.UrlEncode(GetQueryFilter(filter))}");
+        Uri url = new(_instance, $"{_dataPath}/{TEntity.EntityName()}/?$filter={HttpUtility.UrlEncode(GetQueryFilter(filter))}");
         return await GetAsync(url, cancellationToken).ConfigureAwait(false);
     }
 
@@ -186,8 +186,19 @@ public partial class Dynamics365FinanceClient<TEntity> : IDynamics365FinanceClie
     public async Task<IEnumerable<TEntity>> GetPerCompanyAsync(string company, [NotNull] IDictionary<string, object?> filter, CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(filter);
-        string crossCompany = string.Equals(DefaultCompany, company, StringComparison.OrdinalIgnoreCase) ? string.Empty : _crossCompanyQuery + "&";
-        filter.Add("dataAreaId", company);
+        string crossCompany;
+        if (string.IsNullOrWhiteSpace(company))
+        {
+            crossCompany = _crossCompanyQuery + "&";
+        }
+        else
+        {
+            crossCompany = string.Equals(DefaultCompany, company, StringComparison.OrdinalIgnoreCase)
+            ? string.Empty
+            : _crossCompanyQuery + "&";
+            filter.Add("dataAreaId", company);
+        }
+
         Uri url = new(_instance, $"{_dataPath}/{TEntity.EntityName()}/?{crossCompany}$filter={HttpUtility.UrlEncode(GetQueryFilter(filter))}");
         return await GetAsync(url, cancellationToken).ConfigureAwait(false);
     }

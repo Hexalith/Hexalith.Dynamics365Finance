@@ -38,7 +38,8 @@ using Microsoft.Extensions.Options;
 /// <summary>
 /// Class Dynamics365FinanceCustomerService.
 /// </summary>
-public partial class Dynamics365FinanceCustomerService : IDynamics365FinanceCustomerService
+public partial class Dynamics365FinanceCustomerService
+    : IDynamics365FinanceCustomerService
 {
     private readonly string _companyId;
     private readonly IDynamics365FinanceClient<CustomerBase> _customerBaseService;
@@ -53,8 +54,6 @@ public partial class Dynamics365FinanceCustomerService : IDynamics365FinanceCust
     private readonly ILogger<Dynamics365FinanceCustomerService> _logger;
     private readonly string _originId;
     private readonly IOptions<Dynamics365FinancePartiesSettings> _partiesSettings;
-
-    private readonly string _partitionId;
 
     /// <summary>
     /// The store service.
@@ -96,7 +95,6 @@ public partial class Dynamics365FinanceCustomerService : IDynamics365FinanceCust
         SettingsException<OrganizationSettings>.ThrowIfNullOrEmpty(organizationSettings.Value.DefaultCompanyId);
         SettingsException<OrganizationSettings>.ThrowIfNullOrEmpty(organizationSettings.Value.DefaultOriginId);
 
-        _partitionId = organizationSettings.Value.DefaultPartitionId;
         _companyId = organizationSettings.Value.DefaultCompanyId;
         _originId = organizationSettings.Value.DefaultOriginId;
         _customerBaseService = customerBaseService;
@@ -140,13 +138,16 @@ public partial class Dynamics365FinanceCustomerService : IDynamics365FinanceCust
                 {
                     CustomerV3 customer = await CreateCustomerV3Async(registered, tempName, cancellationToken)
                         .ConfigureAwait(false);
-                    customerAccount = customer.CustomerAccount ?? throw new InvalidOperationException($"Created Dynamics 365 Finance customer account number is not defined for {registered.AggregateId}.");
+                    customerAccount = customer.CustomerAccount
+                        ?? throw new InvalidOperationException(
+                            $"Created Dynamics 365 Finance customer account number is not defined for {registered.AggregateId}.");
                     customerKey = new(registered.CompanyId, customerAccount);
                 }
                 else
                 {
                     // At least one external code is mapped to an existing customer, throw an error.
-                    throw new InvalidOperationException($"Customer {registered.AggregateId} already exists in Dynamics 365 for Finance company {registered.CompanyId} : {hexalithExternalCodeCustomer} {originExternalCodeCustomer}");
+                    throw new InvalidOperationException(
+                        $"Customer {registered.AggregateId} already exists in Dynamics 365 for Finance company {registered.CompanyId} : {hexalithExternalCodeCustomer} {originExternalCodeCustomer}");
                 }
             }
             else
@@ -254,7 +255,7 @@ public partial class Dynamics365FinanceCustomerService : IDynamics365FinanceCust
     public async Task<CustomerV3?> FindCustomerByExternalIdAsync(string companyId, string system, string externalId, CancellationToken cancellationToken)
     {
         List<CustomerExternalSystemCode> codes = (await _externalCodeService.GetAsync(
-            new CompanyCustomerExternalCodeFilter(
+            new CustomerExternalCodeFilter(
                 companyId,
                 _originId,
                 system),
@@ -267,7 +268,8 @@ public partial class Dynamics365FinanceCustomerService : IDynamics365FinanceCust
 
         if (codes.Count > 1)
         {
-            throw new InvalidOperationException($"Duplicate external code found for {companyId} and {system} in Dynamics 365 for Finance company {_companyId} : {string.Join(';', codes.Select(c => c.CustomerAccountNumber))}");
+            throw new InvalidOperationException(
+                $"Duplicate external code found for {companyId} and {system} in Dynamics 365 for Finance company {_companyId} : {string.Join(';', codes.Select(c => c.CustomerAccountNumber))}");
         }
 
         string? code = codes[0].CustomerAccountNumber;
@@ -280,7 +282,7 @@ public partial class Dynamics365FinanceCustomerService : IDynamics365FinanceCust
     public async Task<CustomerV3?> FindCustomerByExternalIdAsync(string system, string externalId, CancellationToken cancellationToken)
     {
         List<CustomerExternalSystemCode> codes = (await _externalCodeService.GetAsync(
-            new CrossCompanyCustomerExternalCodeFilter(system, externalId),
+            new CustomerExternalCodeFilter(null, system, externalId),
             cancellationToken).ConfigureAwait(false))
             .ToList();
         if (codes.Count < 1)
@@ -290,7 +292,8 @@ public partial class Dynamics365FinanceCustomerService : IDynamics365FinanceCust
 
         if (codes.Count > 1)
         {
-            throw new InvalidOperationException($"Duplicate external code found for {system}/{externalId} in Dynamics 365 for Finance : {string.Join(';', codes.Select(c => $"{c.DataAreaId}-{c.CustomerAccountNumber}"))}");
+            throw new InvalidOperationException(
+                $"Duplicate external code found for {system}/{externalId} in Dynamics 365 for Finance : {string.Join(';', codes.Select(c => $"{c.DataAreaId}-{c.CustomerAccountNumber}"))}");
         }
 
         string? code = codes[0].CustomerAccountNumber;
@@ -377,7 +380,6 @@ public partial class Dynamics365FinanceCustomerService : IDynamics365FinanceCust
         }
 
         CustomerAccountKey customerKey = new(changed.CompanyId, accountNumber);
-        DateTimeOffset? birthDate = changed.Contact?.Person?.BirthDate;
         CustomerV3 customer = await _customerService.GetSingleAsync(customerKey, cancellationToken).ConfigureAwait(false);
         CustomerBase customerBase = await _customerBaseService.GetSingleAsync(customerKey, cancellationToken).ConfigureAwait(false);
         Dictionary<string, (object?, object?)> customerDelta = customer.GetChanges(changed);
@@ -451,7 +453,7 @@ public partial class Dynamics365FinanceCustomerService : IDynamics365FinanceCust
     {
         IEnumerable<CustomerExternalSystemCode> externalCodes = await _externalCodeService
              .GetAsync(
-                 new CompanyCustomerExternalCodeFilter(
+                 new CustomerExternalCodeFilter(
                  companyId,
                  originId,
                  externalId),
