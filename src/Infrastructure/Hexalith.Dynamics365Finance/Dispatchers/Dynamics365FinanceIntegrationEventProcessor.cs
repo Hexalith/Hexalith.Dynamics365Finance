@@ -16,10 +16,10 @@ using Hexalith.Application.Events;
 using Hexalith.Application.Metadatas;
 using Hexalith.Application.Notifications;
 using Hexalith.Domain.Events;
+using Hexalith.Dynamics365Finance.BusinessEvents;
 using Hexalith.Extensions.Common;
 using Hexalith.Extensions.Errors;
 using Hexalith.Extensions.Helpers;
-using Hexalith.Dynamics365Finance.BusinessEvents;
 
 using Microsoft.Extensions.Logging;
 
@@ -76,35 +76,34 @@ public partial class Dynamics365FinanceIntegrationEventProcessor : DependencyInj
     public partial void LogDispatchingEventDebugInformation(string? eventName, string? aggregateName, string? aggregateId);
 
     /// <inheritdoc/>
-    public async Task SubmitAsync(Dynamics365BusinessEventBase @event, CancellationToken cancellationToken)
+    public async Task SubmitAsync(Dynamics365BusinessEventBase ievent, CancellationToken cancellationToken)
     {
-        ArgumentNullException.ThrowIfNull(@event);
+        ArgumentNullException.ThrowIfNull(ievent);
         try
         {
-            LogDispatchingEventDebugInformation(@event.BusinessEventId, @event.AggregateName, @event.AggregateId);
-            List<BaseCommand> commands = (await ApplyAsync(@event, cancellationToken)
+            LogDispatchingEventDebugInformation(ievent.BusinessEventId, ievent.AggregateName, ievent.AggregateId);
+            List<BaseCommand> commands = (await ApplyAsync(ievent, cancellationToken)
                 .ConfigureAwait(false))
                 .SelectMany(p => p)
-                .Union(@event.ToCommands())
+                .Union(ievent.ToCommands())
                 .ToList();
             foreach (BaseCommand cmd in commands)
             {
                 await _commandBus.PublishAsync(
                     cmd,
-                    Metadata.CreateNew(cmd, @event, _dateTimeService.UtcNow),
+                    Metadata.CreateNew(cmd, ievent, _dateTimeService.UtcNow),
                     cancellationToken)
                     .ConfigureAwait(false);
             }
         }
         catch (Exception ex)
         {
-            EventDispatchFailed error = new(@event, ex);
+            EventDispatchFailed error = new(ievent, ex);
             error.LogApplicationErrorDetails(_logger, ex);
             ApplicationErrorException appException = new(error);
             ApplicationExceptionNotification notification = new(
-                @event.Message.Id,
-                @event.AggregateName,
-                @event.AggregateId,
+                ievent.AggregateName,
+                ievent.AggregateId,
                 appException);
             DateTimeOffset date = _dateTimeService.UtcNow;
 #pragma warning disable CA1031 // Do not catch general exception types
@@ -117,8 +116,8 @@ public partial class Dynamics365FinanceIntegrationEventProcessor : DependencyInj
                         notification,
                         date,
                         new ContextMetadata(
-                            @event.EventId ?? UniqueIdHelper.GenerateDateTimeId(),
-                            @event.InitiatingUserAzureActiveDirectoryObjectId ?? ApplicationConstants.SystemUser,
+                            ievent.EventId ?? UniqueIdHelper.GenerateDateTimeId(),
+                            ievent.InitiatingUserAzureActiveDirectoryObjectId ?? ApplicationConstants.SystemUser,
                             date,
                             null,
                             null),
