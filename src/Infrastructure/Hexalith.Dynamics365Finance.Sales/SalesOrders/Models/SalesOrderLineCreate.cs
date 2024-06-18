@@ -36,6 +36,7 @@ public record SalesOrderLineCreate(
         [property: DataMember(Order = 8)] decimal SalesPrice,
         [property: DataMember(Order = 9)] decimal OrderedSalesQuantity,
         [property: DataMember(Order = 10)] string? SalesUnitSymbol,
-        [property: DataMember(Order = 11)] string? GiftCardGiftMessage)
+        [property: DataMember(Order = 11)] string? GiftCardGiftMessage,
+        [property: DataMember(Order = 12)] string? LineDescription)
 {
 }
