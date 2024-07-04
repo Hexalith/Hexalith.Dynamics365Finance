@@ -1,0 +1,13 @@
+GET https://chr-prd.operations.dynamics.com/data/FFYCustomerExternalSystemCodes?$filter=CustomerAccountNumber%20eq%20'C0043464'%20and%20System%20eq%20'Bspk'%20and%20dataAreaId%20eq%20'0011'
+
+###
+POST https://chr-prd.operations.dynamics.com/data/FFYCustomerExternalSystemCodes
+Content-Type: application/json
+Accept: application/json
+{
+  "System": "Bspk",
+  "CustomerAccountNumber": "C0043464",
+  "ExternalCode": "13416143",
+  "dataAreaId": "0011",
+  "@odata.etag": null
+}

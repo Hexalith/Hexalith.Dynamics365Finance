@@ -152,7 +152,7 @@ public partial class Dynamics365FinanceCustomerService
             }
             else
             {
-                // An incompleted customer was found in Dynamics 365 Finance.
+                // An incomplete customer was found in Dynamics 365 Finance.
                 customerKey = new(registered.CompanyId, customerAccount);
             }
 
