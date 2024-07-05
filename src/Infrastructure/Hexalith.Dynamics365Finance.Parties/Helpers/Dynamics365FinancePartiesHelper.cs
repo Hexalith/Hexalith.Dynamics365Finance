@@ -22,14 +22,16 @@ using Dapr.Actors.Runtime;
 using FluentValidation;
 
 using Hexalith.Application.Events;
-using Hexalith.Extensions.Configuration;
+using Hexalith.Domain.Events;
 using Hexalith.Dynamics365Finance.Helpers;
 using Hexalith.Dynamics365Finance.Parties.Configuration;
 using Hexalith.Dynamics365Finance.Parties.Customers.BusinessEvents;
 using Hexalith.Dynamics365Finance.Parties.Customers.Controller;
 using Hexalith.Dynamics365Finance.Parties.Customers.Entities;
+using Hexalith.Dynamics365Finance.Parties.Customers.IntegrationEvents;
 using Hexalith.Dynamics365Finance.Parties.Customers.Services;
 using Hexalith.Dynamics365Finance.Retail.Stores.Entities;
+using Hexalith.Extensions.Configuration;
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -76,6 +78,7 @@ public static class Dynamics365FinancePartiesHelper
             .AddDynamics365FinanceBusinessEvents()
             .TryAddSingleton<IValidator<Dynamics365FinanceCustomerChanged>, Dynamics365FinanceCustomerChangedValidator>();
         services.TryAddSingleton<IValidator<Dynamics365FinanceCustomerRegistered>, Dynamics365FinanceCustomerRegisteredValidator>();
+        services.TryAddScoped<IIntegrationEventHandler<SnapshotEvent>, CustomerSnapshotEventHandler>();
         services.TryAddScoped<IIntegrationEventHandler<Dynamics365FinanceCustomerChanged>, Dynamics365FinanceCustomerChangedHandler>();
         services.TryAddScoped<IIntegrationEventHandler<Dynamics365FinanceCustomerRegistered>, Dynamics365FinanceCustomerRegisteredHandler>();
         _ = services.ConfigureSettings<Dynamics365FinancePartiesSettings>(configuration);
