@@ -62,7 +62,8 @@ public record CustomerV3
     [property: DataMember(Order = 26)] string? PersonGender = null,
     [property: DataMember(Order = 27)] string? SalesTaxGroup = null,
     [property: DataMember(Order = 28)] string? DefaultDimensionDisplayValue = null,
-    [property: DataMember(Order = 29)] string? AddressBooks = null)
+    [property: DataMember(Order = 29)] string? AddressBooks = null,
+    [property: DataMember(Order = 30)] string? WarehouseIsASNGenerated = null)
 
 : ODataElement(Etag, DataAreaId), IODataElement
 {
