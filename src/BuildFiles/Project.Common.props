@@ -60,7 +60,7 @@
 		<StyleCopAnalyzersVersion>1.2.0-beta.556</StyleCopAnalyzersVersion>
 		<SwashbuckleAspNetCoreVersion>6.6.2</SwashbuckleAspNetCoreVersion>
 		<XUnitRunnerVisualStudioVersion>2.8.0</XUnitRunnerVisualStudioVersion>
-		<XUnitVersion>2.8.0</XUnitVersion>
+		<XUnitVersion>2.8.1</XUnitVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
